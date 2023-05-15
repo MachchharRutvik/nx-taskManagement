@@ -1,0 +1,30 @@
+<div class="container" >
+    <h1 class="text-center">{{title}}</h1>
+    <form action="" [formGroup]="taskForm">
+        <div class="container">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title"   id="title" formControlName="title" class="form-control">
+            <small *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched" class="text-danger" >Title is required</small>
+        </div>
+        <div class="container my-2">
+            <label for="description"  class="form-label">Description</label>
+            <textarea type="text" name="description"   id="description" formControlName="description" class="form-control"></textarea>
+            
+            <small *ngIf="taskForm.get('description')?.invalid && taskForm.get('description')?.touched" class="text-danger" >Description is required</small>
+        </div>
+        <div class="container my-2">
+            <label for="category"  class="form-label">Category</label>
+            <input type="text" name="category"   id="category" formControlName="category" class="form-control">
+            <span *ngIf="taskForm.get('category')?.invalid && taskForm.get('category')?.touched">
+                <small *ngIf="taskForm.get('category')?.errors?.['required']" class="text-danger" >category is required</small>
+            </span>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary my-2 mx-2" (click)="onSubmit()" [disabled] = "taskForm.invalid">{{button}}</button>
+            <button type="button " class="btn btn-primary my-2 mx-2" (click)="onCancel()">Cancel</button>
+            
+        </div>
+    </form>
+
+</div>
+

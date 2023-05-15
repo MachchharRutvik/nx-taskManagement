@@ -1,0 +1,17 @@
+{
+  "tasks": [
+    {
+      "title": "Wake up at 6 am",
+      "description": "wake up at 6 am is good for health",
+      "category": "daily",
+      "completed": true,
+      "id": 1
+    },
+    {
+      "title": "sleep at 10pm ",
+      "description": "sleep at 10 pm it is good for health",
+      "category": "daily",
+      "id": 2
+    }
+  ]
+}

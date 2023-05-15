@@ -1,0 +1,23 @@
+<div class="card border border-black mt-5" style="width: 80rem;">
+ <div class="card-body d-flex justify-content-between" [ngClass]="{'bg-success-subtle text-emphasis-success': task.completed, 'bg-danger-subtle text-emphasis-danger': !task.completed}">
+ 
+    <span  (click)="openAllDetails(task.id)" style="cursor: pointer; margin-bottom: 10px;">
+
+      <span class="card-title"><strong>{{task.title}}</strong> {{task.category}}</span>
+      <!-- <h6 class="card-subtitle mb-2 text-body-secondary">{{user.firstName}}</h6> -->
+      <!-- <p class="card-text">Description: {{task.description}}
+      </p> -->
+      <!-- <p class="card-text">Category: {{task.category}}
+      </p> -->
+    </span>
+    <!-- <a href="#" class="card-link" >Edit</a> -->
+    <!-- <test-modal-popup [title] = "title"></test-modal-popup> -->
+    <div>
+      <a href="#" class="card-link btn btn-primary" (click)="taskCompleted(task.id)" *ngIf="!task.completed">Complete</a>
+      <a href="#" class="card-link btn btn-primary" (click)="deleteUser(task.id)">Delete</a>
+      <a href="#" class="card-link btn btn-primary" (click)="editUser(task.id)" *ngIf="!task.completed">Edit</a>
+
+    </div>
+  </div>
+  
+</div>

@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Task-List</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-nav">
+            <button class="btn btn-primary " (click)="openModal()">add task</button>
+        </div>
+    </div>
+</nav>
+<div class="container" *ngFor="let task of taskDetails">
+     <task-management-card [task]="task" (passId)="getId($event[0],$event[1],$event[2],$event[3])"></task-management-card>
+</div>
+
+
